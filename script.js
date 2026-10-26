@@ -15,10 +15,11 @@
       menuButton.setAttribute('aria-label', 'Open navigation');
     }));
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
         nav.classList.remove('open');
         menuButton.setAttribute('aria-expanded', 'false');
         menuButton.setAttribute('aria-label', 'Open navigation');
+        menuButton.focus();
       }
     });
   }
@@ -38,7 +39,7 @@
     });
   }));
 
-  const modalMap = {sso:'case-sso', onboarding:'case-onboarding', smartreactor:'case-smartreactor', book:'case-book'};
+  const modalMap = {sso:'case-sso', onboarding:'case-onboarding', smartreactor:'case-smartreactor', book:'case-book', sjlt:'case-sjlt', travel:'case-travel'};
   document.querySelectorAll('[data-dialog]').forEach(button => button.addEventListener('click', () => {
     const dialog = document.getElementById(modalMap[button.dataset.dialog]);
     if (dialog && typeof dialog.showModal === 'function') dialog.showModal();

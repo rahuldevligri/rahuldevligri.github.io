@@ -4,14 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#070910">
-  <meta name="description" content="Rahul Devligri — Java Backend Engineer building secure APIs, event-driven services, and dependable backend systems.">
-  <meta property="og:title" content="Rahul Devligri — Backend Systems Engineer">
-  <meta property="og:description" content="Secure by design. Reliable by default. Explore my backend engineering work.">
+  <meta name="description" content="Rahul Devligri is a Java Backend Engineer focused on Spring Boot, secure SSO integrations, event-driven services, Kafka, and data-backed applications.">
+  <meta name="author" content="Rahul Devligri">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rahuldevligri.github.io/">
+  <meta property="og:title" content="Rahul Devligri — Java Backend Engineer">
+  <meta property="og:description" content="Secure integrations. Event-driven services. Thoughtful backend engineering.">
   <meta property="og:type" content="website">
-  <title>Rahul Devligri — Backend Systems Engineer</title>
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/rahul-avatar.png?v=4">
-  <link rel="shortcut icon" type="image/png" href="assets/rahul-avatar.png?v=4">
-  <link rel="apple-touch-icon" href="assets/rahul-avatar.png?v=4">
+  <meta property="og:url" content="https://rahuldevligri.github.io/">
+  <meta property="og:image" content="https://rahuldevligri.github.io/assets/og-card.png">
+  <meta property="og:image:alt" content="Rahul Devligri — Java Backend Engineer portfolio preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rahul Devligri — Java Backend Engineer">
+  <meta name="twitter:description" content="Secure integrations. Event-driven services. Thoughtful backend engineering.">
+  <meta name="twitter:image" content="https://rahuldevligri.github.io/assets/og-card.png">
+  <title>Rahul Devligri — Java Backend Engineer</title>
+  <link rel="icon" type="image/png" sizes="180x180" href="assets/rahul-avatar.png?v=5">
+  <link rel="shortcut icon" type="image/png" href="assets/rahul-avatar.png?v=5">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/rahul-avatar.png?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,7 +34,7 @@
   <header class="nav-wrap">
     <a class="identity" href="#top" aria-label="Rahul Devligri, home"><span class="identity-mark">R<span>/</span>D</span><span class="identity-text"><b>RAHUL DEVLIGRI</b><small>BACKEND SYSTEMS ENGINEER</small></span></a>
     <button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
-    <nav id="main-nav" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#system">My approach</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact">Let's connect <span>↗</span></a></nav>
+    <nav id="main-nav" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#more-projects">More projects</a><a href="#system">My approach</a><a href="#experience">Experience</a><a class="nav-cta" href="#contact">Let's connect <span>↗</span></a></nav>
   </header>
 
   <main id="top">
@@ -67,7 +77,7 @@
 
     <section class="section work-section" id="work">
       <div class="section-label reveal"><span>02 / SELECTED WORK</span><span class="label-line"></span><span>PROBLEMS OVER PIXELS</span></div>
-      <div class="work-heading"><h2 class="reveal">Built to solve.<br><em>Designed to last.</em></h2><p class="reveal delay-1">A focused set of projects across identity, messaging, backend applications, and AI-assisted automation.</p></div>
+      <div class="work-heading"><h2 class="reveal">Built to solve.<br><em>Designed to last.</em></h2><p class="reveal delay-1">Six featured projects across secure identity, event-driven services, AI-assisted automation, and real business workflows.</p></div>
       <div class="work-filter reveal" role="group" aria-label="Filter project list"><span class="filter-caption">FILTER /</span><button class="filter active" data-filter="all" aria-pressed="true">All work <b>06</b></button><button class="filter" data-filter="security" aria-pressed="false">Security</button><button class="filter" data-filter="messaging" aria-pressed="false">Messaging</button><button class="filter" data-filter="backend" aria-pressed="false">Backend</button><button class="filter" data-filter="ai" aria-pressed="false">AI</button></div>
       <div class="project-list">
         <article class="project-row featured reveal" data-project data-category="security backend">
@@ -79,19 +89,56 @@
           <div class="project-number">02 <span>—</span> EVENT-DRIVEN</div><div class="project-main"><h3>Employee Onboarding<br><em>Consumer</em></h3><p>Consumes employee-created events, validates required fields, and persists user, profile, client, platform, and role mappings.</p><div class="tags"><span>Java 17</span><span>Kafka</span><span>Spring Data JPA</span><span>PostgreSQL</span></div></div><div class="project-diagram diagram-kafka"><div class="kafka-card"><small>EVENT</small><b>employee.created</b><span>JSON payload</span></div><div class="flow-pulse"><i></i><i></i><i></i><i></i></div><div class="kafka-card result"><small>CONSUMER</small><b>Validate → Persist</b><span>JPA / database</span></div><div class="diagram-caption">ASYNC PIPELINE / 02</div></div><div class="project-end"><span class="project-status"><i></i> PUBLIC REPOSITORY</span><div class="project-links"><button data-dialog="onboarding">Case study <span>↗</span></button><a href="https://github.com/rahuldevligri/employee-onboarding-kafka-consumer" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div>
         </article>
         <article class="project-row reveal" data-project data-category="ai backend">
-          <div class="project-number">03 <span>—</span> AI AUTOMATION</div><div class="project-main"><h3>SmartReactor<br><em>Review Responder</em></h3><p>Retrieves relevant FAQs through semantic similarity and uses an OpenAI model to draft context-aware customer review replies.</p><div class="tags"><span>Python</span><span>FAISS</span><span>OpenAI API</span><span>Flask</span></div></div><div class="project-diagram diagram-ai"><div class="ai-orb">AI<span>RAG</span></div><div class="ai-orbit one"></div><div class="ai-orbit two"></div><div class="ai-label label-in">REVIEW</div><div class="ai-label label-out">REPLY</div><div class="diagram-caption">CONTEXT → GENERATION / 03</div></div><div class="project-end"><span class="project-status"><i></i> PUBLIC REPOSITORY</span><div class="project-links"><button data-dialog="smartreactor">Case study <span>↗</span></button><a href="https://github.com/rahuldevligri/Zaggle_App_SmartReactor" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div>
+          <div class="project-number">03 <span>—</span> AI CHALLENGE</div><div class="project-main"><h3>SmartReactor<br><em>Review Responder</em></h3><p>Built for an internal AI challenge at Zaggle, SmartReactor retrieves relevant FAQs through semantic similarity before drafting context-aware customer review replies.</p><div class="tags"><span>Python</span><span>FAISS</span><span>OpenAI API</span><span>Flask</span></div></div><div class="project-diagram diagram-ai"><div class="ai-orb">AI<span>RAG</span></div><div class="ai-orbit one"></div><div class="ai-orbit two"></div><div class="ai-label label-in">REVIEW</div><div class="ai-label label-out">REPLY</div><div class="diagram-caption">CONTEXT → GENERATION / 03</div></div><div class="project-end"><span class="project-status"><i></i> PUBLIC REPOSITORY</span><div class="project-links"><button data-dialog="smartreactor">Case study <span>↗</span></button><a href="https://github.com/rahuldevligri/Zaggle_App_SmartReactor" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div>
         </article>
         <article class="project-row reveal" data-project data-category="backend">
           <div class="project-number">04 <span>—</span> WEB APPLICATION</div><div class="project-main"><h3>Book<br><em>Portal</em></h3><p>Catalogue search, filtering, role-aware administration, secure account flows, and report generation in a data-backed application.</p><div class="tags"><span>Java 21</span><span>Spring Boot</span><span>MySQL</span><span>JWT</span></div></div><div class="project-diagram diagram-book"><div class="book-window"><div class="window-bar"><i></i><i></i><i></i><span>BOOK / PORTAL</span></div><div class="book-lines"><b></b><i></i><i></i><i></i></div><div class="book-items"><span></span><span></span><span></span></div><div class="book-foot">SEARCH / ACCESS / REPORTS</div></div><div class="diagram-caption">DATA → DOMAIN → REPORT / 04</div></div><div class="project-end"><span class="project-status"><i></i> PUBLIC REPOSITORY</span><div class="project-links"><button data-dialog="book">Case study <span>↗</span></button><a href="https://github.com/rahuldevligri/Book-portal" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div>
         </article>
-        <article class="project-row compact reveal" data-project data-category="messaging backend">
-          <div class="project-number">05 <span>—</span> STREAMING</div><div class="project-main"><h3>Delivery Location <em>Producer</em></h3><p>REST-triggered location updates published to a Kafka topic.</p><div class="tags"><span>Spring Boot</span><span>Spring Kafka</span><span>Maven</span></div></div><div class="project-compact-visual"><span>REST API</span><i>→</i><span>KAFKA TOPIC</span><i>→</i><span>EVENT</span></div><div class="project-end"><span class="project-status"><i></i> PUBLIC REPOSITORY</span><div class="project-links"><a href="https://github.com/rahuldevligri/Kafka-deliveryboy-location-producer" target="_blank" rel="noopener noreferrer">Source code ↗</a></div></div>
+        <article class="project-row compact reveal" data-project data-category="backend">
+          <div class="project-number">05 <span>—</span> CLIENT SYSTEM</div><div class="project-main"><h3>Manufacturing <em>Operations Platform</em></h3><p>Freelance client work spanning production, inventory, costing, quality workflows, approvals, and operational reporting.</p><div class="tags"><span>PHP</span><span>MySQL</span><span>Role-based access</span><span>Reporting</span></div></div><div class="project-compact-visual professional"><span>PRODUCTION</span><span>INVENTORY</span><span>QUALITY</span><span>REPORTING</span></div><div class="project-end"><span class="project-status"><i></i> FREELANCE CLIENT PROJECT</span><div class="project-links"><button data-dialog="sjlt">Case study <span>↗</span></button><span class="not-public">Client source not public</span></div></div>
         </article>
         <article class="project-row compact reveal" data-project data-category="backend">
-          <div class="project-number">06 <span>—</span> PROFESSIONAL WORK</div><div class="project-main"><h3>Travel Booking & <em>Policy Engine</em></h3><p>Multi-mode booking services, partner integrations, SpEL-based policy validation, and Kafka workflows.</p><div class="tags"><span>Spring Boot</span><span>SpEL</span><span>Kafka</span><span>REST APIs</span></div></div><div class="project-compact-visual professional"><span>FLIGHT</span><span>HOTEL</span><span>POLICY</span><span>PARTNER API</span></div><div class="project-end"><span class="project-status"><i></i> PROFESSIONAL EXPERIENCE</span><span class="not-public">Non-public implementation</span></div>
+          <div class="project-number">06 <span>—</span> PROFESSIONAL WORK</div><div class="project-main"><h3>Travel Booking & <em>Policy Engine</em></h3><p>Multi-mode booking services, partner integrations, SpEL-based policy validation, and Kafka workflows.</p><div class="tags"><span>Spring Boot</span><span>SpEL</span><span>Kafka</span><span>REST APIs</span></div></div><div class="project-compact-visual professional"><span>FLIGHT</span><span>HOTEL</span><span>POLICY</span><span>PARTNER API</span></div><div class="project-end"><span class="project-status"><i></i> PROFESSIONAL WORK</span><div class="project-links"><button data-dialog="travel">Case study <span>↗</span></button><span class="not-public">Details summarized</span></div></div>
         </article>
       </div>
-      <p class="project-footnote reveal"><span>↳</span> Selected work only. Professional work is labelled separately from public repositories; no private source code or confidential implementation details are exposed.</p>
+      <p class="project-footnote reveal"><span>↳</span> Featured work is intentionally curated. Scroll to the wider portfolio below for earlier and complementary builds.</p>
+      <div class="more-work" id="more-projects" aria-labelledby="more-projects-title">
+        <div class="more-work-heading reveal">
+          <div><span class="more-work-kicker">MORE BUILDS / 04 PROJECTS</span><h3 id="more-projects-title">The wider <em>portfolio.</em></h3></div>
+          <p>Earlier and complementary projects stay available without competing with the strongest backend case studies.</p>
+        </div>
+        <div class="more-work-grid">
+          <article class="more-work-card reveal">
+            <div class="more-work-meta"><span>07 / EVENT STREAMING</span><span>PUBLIC REPO</span></div>
+            <h4>Delivery Location Producer</h4>
+            <p>Publishes simulated delivery-location updates to a Kafka topic through a REST endpoint.</p>
+            <div class="tags"><span>Spring Boot</span><span>Spring Kafka</span><span>Maven</span></div>
+            <a href="https://github.com/rahuldevligri/Kafka-deliveryboy-location-producer" target="_blank" rel="noopener noreferrer">View source <span>↗</span></a>
+          </article>
+          <article class="more-work-card reveal delay-1">
+            <div class="more-work-meta"><span>08 / FULL STACK</span><span>EARLIER PROJECT</span></div>
+            <h4>Doctor Appointment Booking</h4>
+            <p>Doctor and patient appointment workflows, REST endpoints, relational data modelling, and an Angular interface.</p>
+            <div class="tags"><span>Spring Boot</span><span>REST APIs</span><span>Angular</span></div>
+            <a href="https://github.com/rahuldevligri/Doctor_Appointment_Booking_System" target="_blank" rel="noopener noreferrer">View repository <span>↗</span></a>
+          </article>
+          <article class="more-work-card reveal">
+            <div class="more-work-meta"><span>09 / PAYMENT</span><span>JAVA PROJECT</span></div>
+            <h4>Razorpay Payment Integration</h4>
+            <p>Payment initiation and order flow with transaction persistence, server-side validation, and success/failure handling.</p>
+            <div class="tags"><span>Java</span><span>Spring Boot</span><span>JPA</span><span>Razorpay</span></div>
+            <a href="https://github.com/rahuldevligri/Razorpay-Payment-Gateway" target="_blank" rel="noopener noreferrer">View repository <span>↗</span></a>
+          </article>
+          <article class="more-work-card reveal delay-1">
+            <div class="more-work-meta"><span>10 / WEB APPLICATION</span><span>PUBLIC REPO</span></div>
+            <h4>Virtual Travel Planner</h4>
+            <p>A car-rental website for local, outstation, airport, railway, and corporate travel, including a validated quote-request flow.</p>
+            <div class="tags"><span>Core PHP</span><span>MySQL / PDO</span><span>JavaScript</span></div>
+            <a href="https://github.com/rahuldevligri/virtual-travel-planner" target="_blank" rel="noopener noreferrer">View project <span>↗</span></a>
+          </article>
+        </div>
+        <p class="more-work-note reveal"><span>↳</span> Public projects link to source. Professional and client work is described at a high level where implementation details are not public.</p>
+      </div>
     </section>
 
     <section class="system-section" id="architecture">
@@ -121,6 +168,10 @@
   <dialog class="case-dialog" id="case-onboarding" aria-labelledby="case-onboarding-title"><div class="dialog-inner"><button class="dialog-close" aria-label="Close case study">×</button><span class="dialog-overline">CASE STUDY / 02 — MESSAGING</span><h2 id="case-onboarding-title">Employee Onboarding Consumer</h2><p class="dialog-intro">An asynchronous event-processing path that turns an employee-created event into persisted application records.</p><div class="case-block"><h3>Processing path</h3><div class="case-flow"><span>Kafka topic</span><i>→</i><span>Validate payload</span><i>→</i><span>Consumer service</span><i>→</i><span>JPA persistence</span></div></div><div class="case-block"><h3>Implementation areas</h3><ul><li>Spring Kafka event listener and payload handling.</li><li>Required-field validation before persistence work.</li><li>User/profile and associated client/platform/role mappings.</li><li>Spring Data JPA persistence backed by PostgreSQL-compatible storage.</li></ul></div><a class="button primary" href="https://github.com/rahuldevligri/employee-onboarding-kafka-consumer" target="_blank" rel="noopener noreferrer">Open source repository ↗</a></div></dialog>
   <dialog class="case-dialog" id="case-smartreactor" aria-labelledby="case-smartreactor-title"><div class="dialog-inner"><button class="dialog-close" aria-label="Close case study">×</button><span class="dialog-overline">CASE STUDY / 03 — AI AUTOMATION</span><h2 id="case-smartreactor-title">SmartReactor Review Responder</h2><p class="dialog-intro">An AI-assisted workflow that retrieves relevant FAQ context before drafting a review reply.</p><div class="case-block"><h3>Processing path</h3><div class="case-flow"><span>Review</span><i>→</i><span>Semantic FAQ search</span><i>→</i><span>LLM draft</span><i>→</i><span>Reply</span></div></div><div class="case-block"><h3>Implementation areas</h3><ul><li>FAQ embeddings and vector similarity with FAISS.</li><li>Context assembly for the response-generation prompt.</li><li>Lightweight Flask interface for manual use.</li></ul></div><a class="button primary" href="https://github.com/rahuldevligri/Zaggle_App_SmartReactor" target="_blank" rel="noopener noreferrer">Open source repository ↗</a></div></dialog>
   <dialog class="case-dialog" id="case-book" aria-labelledby="case-book-title"><div class="dialog-inner"><button class="dialog-close" aria-label="Close case study">×</button><span class="dialog-overline">CASE STUDY / 04 — APPLICATION DESIGN</span><h2 id="case-book-title">Book Portal</h2><p class="dialog-intro">A data-backed catalogue application with search, administration, account security, and reporting workflows.</p><div class="case-block"><h3>Engineering areas</h3><ul><li>Catalogue search, filtering, and pagination.</li><li>Role-aware administrative operations and secure account flows.</li><li>Relational persistence with MySQL and Spring Data JPA.</li><li>Report generation with JasperReports.</li></ul></div><a class="button primary" href="https://github.com/rahuldevligri/Book-portal" target="_blank" rel="noopener noreferrer">Open source repository ↗</a></div></dialog>
+
+  <dialog class="case-dialog" id="case-sjlt" aria-labelledby="case-sjlt-title"><div class="dialog-inner"><button class="dialog-close" aria-label="Close case study">×</button><span class="dialog-overline">CASE STUDY / CLIENT PROJECT</span><h2 id="case-sjlt-title">Manufacturing Operations Platform</h2><p class="dialog-intro">An ongoing freelance project focused on making multi-step manufacturing workflows easier to manage and report.</p><div class="case-block"><h3>Scope at a glance</h3><div class="case-flow"><span>Production</span><i>→</i><span>Inventory</span><i>→</i><span>Quality & costing</span><i>→</i><span>Reporting</span></div></div><div class="case-block"><h3>Engineering focus</h3><ul><li>Workflow-oriented modules for production, inventory, costing, quality, approvals, and reporting.</li><li>Role-aware access and relational data management.</li><li>Clear separation of operational responsibilities and reporting views.</li></ul></div><p class="dialog-note">This is client work. The public portfolio intentionally omits private source code, credentials, and confidential operational details.</p></div></dialog>
+  <dialog class="case-dialog" id="case-travel" aria-labelledby="case-travel-title"><div class="dialog-inner"><button class="dialog-close" aria-label="Close case study">×</button><span class="dialog-overline">CASE STUDY / PROFESSIONAL WORK</span><h2 id="case-travel-title">Travel Booking & Policy Engine</h2><p class="dialog-intro">A multi-mode travel workflow with policy validation and partner integrations. Details below stay at a high level because this was professional work, not a public repository.</p><div class="case-block"><h3>High-level processing path</h3><div class="case-flow"><span>Booking request</span><i>→</i><span>Policy rules</span><i>→</i><span>Partner API</span><i>→</i><span>Booking result</span></div></div><div class="case-block"><h3>Engineering focus</h3><ul><li>Travel modes including flights, hotels, cars, buses, and trains.</li><li>Dynamic policy validation using Spring Expression Language (SpEL).</li><li>REST-based partner integrations and Kafka-backed workflows.</li><li>Separating policy decisions from booking orchestration.</li></ul></div><p class="dialog-note">This summary avoids exposing private source code, internal endpoints, partner credentials, or confidential business details.</p></div></dialog>
+
   <script src="script.js" defer></script>
 </body>
 </html>
