@@ -3267,3 +3267,26 @@ html { overflow-x: clip; }
   width: 100%;
   height: 100%;
 }
+
+/* V3.8: reduce first-viewport paint work on small screens */
+@media (max-width: 760px) {
+  /* The fixed SVG turbulence texture is decorative and expensive to rasterize on mobile. */
+  .noise {
+    display: none;
+  }
+
+  /* Keep the LCP image static on mobile; desktop retains the cinematic float animation. */
+  .portrait-frame img {
+    animation: none;
+    transform: scale(1.08);
+  }
+
+  /* Preserve the orbit/chip artwork but avoid continuous first-screen motion on mobile. */
+  .hero-art .orbit-a,
+  .hero-art .orbit-b,
+  .hero-art .orbit-c,
+  .hero-art .floating-chip {
+    animation: none;
+  }
+}
+
