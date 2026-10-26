@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070910">
+  <meta name="description" content="A Java Spring Boot case study of SAML 2.0 single sign-on, Identity Provider and Service Provider flows, metadata, certificates, and trust validation.">
+  <meta name="author" content="Rahul Devligri">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rahuldevligri.github.io/projects/saml-2-sso.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SAML 2.0 SSO with Spring Boot | Rahul Devligri">
+  <meta property="og:description" content="A Java Spring Boot case study of SAML 2.0 single sign-on, Identity Provider and Service Provider flows, metadata, certificates, and trust validation.">
+  <meta property="og:url" content="https://rahuldevligri.github.io/projects/saml-2-sso.html">
+  <meta property="og:image" content="https://rahuldevligri.github.io/assets/og-card.png">
+  <meta property="og:image:alt" content="Rahul Devligri — Java Backend Engineer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SAML 2.0 SSO with Spring Boot | Rahul Devligri">
+  <meta name="twitter:description" content="A Java Spring Boot case study of SAML 2.0 single sign-on, Identity Provider and Service Provider flows, metadata, certificates, and trust validation.">
+  <meta name="twitter:image" content="https://rahuldevligri.github.io/assets/og-card.png">
+  <title>SAML 2.0 SSO with Spring Boot | Rahul Devligri</title>
+  <link rel="icon" type="image/png" sizes="180x180" href="../assets/rahul-avatar.png?v=5">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/rahul-avatar.png?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"SAML 2.0 Single Sign-On with Spring Boot","description":"Technical case study describing SAML 2.0 single sign-on flows, metadata, X.509 certificates, and validation boundaries in a Java Spring Boot project.","mainEntityOfPage":"https://rahuldevligri.github.io/projects/saml-2-sso.html","author":{"@type":"Person","name":"Rahul Devligri","url":"https://rahuldevligri.github.io/","sameAs":["https://github.com/rahuldevligri","https://www.linkedin.com/in/rahuldevligri/"]},"image":"https://rahuldevligri.github.io/assets/og-card.png","keywords":"Java, Spring Boot, SAML 2.0, OpenSAML, SSO, Identity Provider, Service Provider, X.509","inLanguage":"en"}</script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <header class="nav-wrap">
+    <a class="identity" href="../index.html#top" aria-label="Rahul Devligri, home"><span class="identity-mark">R<span>/</span>D</span><span class="identity-text"><b>RAHUL DEVLIGRI</b><small>JAVA BACKEND ENGINEER</small></span></a>
+    <button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+    <nav id="main-nav" aria-label="Main navigation"><a href="../index.html#work">Selected work</a><a href="../index.html#recognition">Recognition</a><a href="../index.html#experience">Experience</a><a class="nav-cta" href="../index.html#contact">Let's connect <span>↗</span></a></nav>
+  </header>
+  <main class="study-page" id="top">
+
+    <nav class="study-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">SAML 2.0 SSO</span></nav>
+    <section class="study-hero" aria-labelledby="study-title">
+      <div class="reveal">
+        <p class="study-kicker">CASE STUDY 01 / SECURITY & IDENTITY</p>
+        <h1 id="study-title">SAML 2.0<br><em>Single Sign-On.</em></h1>
+        <p class="study-lede">A Java Spring Boot implementation exploring how a Service Provider and an Identity Provider exchange SAML messages to establish a trusted sign-in flow.</p>
+        <div class="study-labels"><span>Java</span><span>Spring Boot</span><span>OpenSAML</span><span>SAML 2.0</span><span>X.509</span></div>
+        <div class="study-cta-row"><a class="button primary" href="https://github.com/rahuldevligri/sso_implementation" target="_blank" rel="noopener noreferrer">View public repository <span>↗</span></a><a class="button ghost" href="../index.html#recognition">See recognition <span>↗</span></a></div>
+      </div>
+      <div class="study-visual reveal" role="img" aria-label="Illustrative system flow diagram">
+      <div class="study-visual-head"><span>REFERENCE FLOW</span><span>ILLUSTRATIVE</span></div>
+      <div class="study-flow"><div class="study-flow-node"><span><strong>Application / SP</strong><small>Starts or receives the authentication flow</small></span><b>SP</b></div><div class="study-flow-connector" aria-hidden="true">↓</div><div class="study-flow-node"><span><strong>SAML AuthnRequest</strong><small>Service-provider initiated path</small></span><b>REQUEST</b></div><div class="study-flow-connector" aria-hidden="true">↓</div><div class="study-flow-node"><span><strong>Identity Provider</strong><small>User authentication and response creation</small></span><b>IdP</b></div><div class="study-flow-connector" aria-hidden="true">↓</div><div class="study-flow-node"><span><strong>Signed SAML response</strong><small>Returned to the assertion consumer endpoint</small></span><b>XML</b></div><div class="study-flow-connector" aria-hidden="true">↓</div><div class="study-flow-node"><span><strong>Trust validation</strong><small>Validate response before granting app access</small></span><b>ACS</b></div></div>
+      <div class="study-visual-foot"><span>IDENTITY BOUNDARY</span><span>FLOW / SAML 2.0</span></div>
+    </div>
+    </section>
+    <section class="study-section" aria-labelledby="challenge-title">
+      <div class="study-section-heading"><div><span class="study-overline">01 / THE PROBLEM</span><h2 id="challenge-title">A redirect is not <em>trust.</em></h2></div><p>Single sign-on is a protocol integration problem, not just a login button. Both sides need matching metadata and identifiers, a correctly addressed response, and a certificate trust arrangement that can be validated.</p></div>
+      <div class="study-grid">
+        <article class="study-card"><span class="study-card-index">FLOW A / IDP-INITIATED</span><h3>Identity provider to application</h3><p>The IdP creates a SAML response and sends it to the Service Provider, which processes the response and establishes the application session if validation succeeds.</p></article>
+        <article class="study-card"><span class="study-card-index">FLOW B / SP-INITIATED</span><h3>Application to IdP / ADFS</h3><p>The application starts an authentication request, redirects the user to the IdP, and receives the resulting SAML response at its configured assertion consumer endpoint.</p></article>
+      </div>
+    </section>
+    <section class="study-section" aria-labelledby="implementation-title">
+      <div class="study-section-heading"><div><span class="study-overline">02 / ENGINEERING WORK</span><h2 id="implementation-title">Define the trust <em>boundaries.</em></h2></div><p>The public repository documents both IdP-to-SP and SP-to-IdP flow handling, metadata generation, certificate/key use, and SAML message signing or verification.</p></div>
+      <div class="study-grid">
+        <article class="study-card"><span class="study-card-index">01 / MESSAGE STRUCTURE</span><h3>Identifiers and endpoints</h3><ul><li>Issuer and entity identifiers for the participating systems.</li><li>Subject / NameID and assertion consumer service (ACS) destination.</li><li>Audience restriction and recipient context.</li></ul></article>
+        <article class="study-card"><span class="study-card-index">02 / CRYPTOGRAPHIC TRUST</span><h3>Metadata and certificates</h3><ul><li>SAML metadata for endpoints and certificates.</li><li>X.509 certificate and private-key handling for message signing.</li><li>Verification of incoming SAML signatures against the trusted IdP certificate.</li></ul></article>
+      </div>
+      <div class="study-callout"><strong>Engineering note:</strong> This is a public demonstration repository, not a claim that every production-hardening control is enabled. Review the actual code and configuration before reusing it in a production identity system.</div>
+    </section>
+    <section class="study-section" aria-labelledby="hardening-title">
+      <div class="study-section-heading"><div><span class="study-overline">03 / SECURITY REVIEW</span><h2 id="hardening-title">What I would verify <em>before production.</em></h2></div><p>These are the review points to validate for a real deployment; they should not be read as a claim that every control is fully implemented in this demo.</p></div>
+      <ul class="study-checklist"><li>Validate signature trust and the allowed signing certificate.</li><li>Check issuer, audience, recipient, and destination consistency.</li><li>Enforce assertion validity windows and clock-skew policy.</li><li>Prevent assertion replay and unintended session creation.</li><li>Keep private keys and IdP secrets outside the repository.</li><li>Avoid logging raw assertions, tokens, or authentication secrets.</li></ul>
+    </section>
+    <section class="study-section" aria-labelledby="takeaway-title"><div class="study-section-heading"><div><span class="study-overline">04 / TAKEAWAY</span><h2 id="takeaway-title">Security is in the <em>details.</em></h2></div><p>This project demonstrates protocol-level integration work: understanding the SAML message exchange, configuring the trust relationship, and treating validation as the boundary between an external identity and an application session.</p></div><div class="study-related"><a href="smartreactor-ai.html">Next: SmartReactor AI <span>↗</span></a><a href="travel-policy-engine.html">Travel Policy Engine <span>↗</span></a></div></section>
+
+    <div class="study-cta-row">
+      <a class="button primary" href="../index.html#contact">Discuss backend engineering <span>↗</span></a>
+      <a class="button ghost" href="../index.html#work">Back to selected work <span>↑</span></a>
+    </div>
+    <p class="study-footer-note">Built with intention. This page describes the project at a technical level; confidential implementation details are intentionally excluded.</p>
+  </main>
+  <footer class="footer"><a class="footer-logo" href="../index.html#top">R<span>/</span>D</a><p>Built with intention. Tuned for clarity.</p><div><span>© <span id="year"></span> Rahul Devligri</span><a href="#top">Back to top ↑</a></div></footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070910">
+  <meta name="description" content="A generalized Java Spring Boot case study covering multi-mode travel workflows, SpEL-based policy validation, partner integrations, and event-driven backend services.">
+  <meta name="author" content="Rahul Devligri">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rahuldevligri.github.io/projects/travel-policy-engine.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Travel Booking Policy Engine | Rahul Devligri">
+  <meta property="og:description" content="A generalized Java Spring Boot case study covering multi-mode travel workflows, SpEL-based policy validation, partner integrations, and event-driven backend services.">
+  <meta property="og:url" content="https://rahuldevligri.github.io/projects/travel-policy-engine.html">
+  <meta property="og:image" content="https://rahuldevligri.github.io/assets/og-card.png">
+  <meta property="og:image:alt" content="Rahul Devligri — Java Backend Engineer">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Travel Booking Policy Engine | Rahul Devligri">
+  <meta name="twitter:description" content="A generalized Java Spring Boot case study covering multi-mode travel workflows, SpEL-based policy validation, partner integrations, and event-driven backend services.">
+  <meta name="twitter:image" content="https://rahuldevligri.github.io/assets/og-card.png">
+  <title>Travel Booking Policy Engine | Rahul Devligri</title>
+  <link rel="icon" type="image/png" sizes="180x180" href="../assets/rahul-avatar.png?v=5">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/rahul-avatar.png?v=5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Travel Booking and Policy Engine","description":"A high-level case study of professional backend work involving multi-mode travel booking workflows, dynamic policy validation with Spring Expression Language, partner integrations, and Kafka-based messaging.","mainEntityOfPage":"https://rahuldevligri.github.io/projects/travel-policy-engine.html","author":{"@type":"Person","name":"Rahul Devligri","url":"https://rahuldevligri.github.io/","sameAs":["https://github.com/rahuldevligri","https://www.linkedin.com/in/rahuldevligri/"]},"image":"https://rahuldevligri.github.io/assets/og-card.png","keywords":"Java, Spring Boot, travel booking, SpEL, policy engine, Kafka, microservices, partner API integration","inLanguage":"en"}</script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <header class="nav-wrap">
+    <a class="identity" href="../index.html#top" aria-label="Rahul Devligri, home"><span class="identity-mark">R<span>/</span>D</span><span class="identity-text"><b>RAHUL DEVLIGRI</b><small>JAVA BACKEND ENGINEER</small></span></a>
+    <button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
+    <nav id="main-nav" aria-label="Main navigation"><a href="../index.html#work">Selected work</a><a href="../index.html#recognition">Recognition</a><a href="../index.html#experience">Experience</a><a class="nav-cta" href="../index.html#contact">Let's connect <span>↗</span></a></nav>
+  </header>
+  <main class="study-page" id="top">
+
+    <nav class="study-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Travel Policy Engine</span></nav>
+    <section class="study-hero" aria-labelledby="study-title">
+      <div class="reveal">
+        <p class="study-kicker">CASE STUDY 03 / PROFESSIONAL BACKEND WORK</p>
+        <h1 id="study-title">Travel Booking<br><em>& Policy Engine.</em></h1>
+        <p class="study-lede">A multi-mode booking workflow that combines policy validation, vendor integration, and backend orchestration—described at a high level to respect the boundaries of professional work.</p>
+        <div class="study-labels"><span>Java</span><span>Spring Boot</span><span>Microservices</span><span>SpEL</span><span>Kafka</span><span>REST APIs</span></div>
+        <div class="study-cta-row"><a class="button primary" href="../index.html#contact">Discuss related work <span>↗</span></a><a class="button ghost" href="../index.html#work">Back to projects <span>↑</span></a></div>
+      </div>
+      <div class="study-visual reveal" role="img" aria-label="Illustrative system flow diagram">
+      <div class="study-visual-head"><span>REFERENCE FLOW</span><span>ILLUSTRATIVE</span></div>
+      <div class="study-flow"><div class="study-flow-node"><span><strong>Booking request</strong><small>A selected travel mode enters the workflow</small></span><b>API</b></div><div class="study-flow-connector" aria-hidden="true">↓</div><div class="study-flow-node"><span><strong>Policy evaluation</strong><small>Dynamic rules evaluate the request</small></span><b>SpEL</b></div><div class="study-flow-connector" aria-hidden="true">↓</div><div class="study-flow-node"><span><strong>Partner integration</strong><small>Eligible requests flow to vendor APIs</small></span><b>REST</b></div><div class="study-flow-connector" aria-hidden="true">↓</div><div class="study-flow-node"><span><strong>Booking outcome</strong><small>Result is handled by backend services</small></span><b>EVENT</b></div></div>
+      <div class="study-visual-foot"><span>POLICY BEFORE PARTNER CALL</span><span>GENERALIZED FLOW</span></div>
+    </div>
+    </section>
+    <section class="study-section" aria-labelledby="scope-title">
+      <div class="study-section-heading"><div><span class="study-overline">01 / DOMAIN SCOPE</span><h2 id="scope-title">One policy layer, <em>multiple modes.</em></h2></div><p>The professional work covered travel modes such as flights, hotels, cars, buses, and trains. Integrations involved travel partners including Yatra and Paxes. The flow shown here is illustrative, not an internal production diagram.</p></div>
+      <div class="study-grid">
+        <article class="study-card"><span class="study-card-index">01 / BOOKING WORKFLOWS</span><h3>Different modes, shared principles</h3><p>Each mode carries its own data and partner requirements. A consistent backend boundary helps keep request validation, policy decisions, and booking orchestration understandable.</p></article>
+        <article class="study-card"><span class="study-card-index">02 / POLICY RULES</span><h3>Keep policy logic explicit</h3><p>Spring Expression Language (SpEL) can express dynamic policy conditions so rules can be evaluated against request context without scattering every decision through the booking flow.</p></article>
+      </div>
+    </section>
+    <section class="study-section" aria-labelledby="engineering-title">
+      <div class="study-section-heading"><div><span class="study-overline">02 / ENGINEERING CONCERNS</span><h2 id="engineering-title">Separate decisions from <em>orchestration.</em></h2></div><p>Rules and partner APIs introduce different kinds of failure. Treating them as explicit boundaries makes a multi-step workflow easier to reason about, test, and support.</p></div>
+      <div class="study-grid">
+        <article class="study-card"><span class="study-card-index">01 / POLICY BOUNDARY</span><h3>Evaluate before committing</h3><p>Make the policy outcome visible to the booking workflow and keep rule evaluation testable. An explainable rejection is better than an opaque downstream failure.</p></article>
+        <article class="study-card"><span class="study-card-index">02 / PARTNER BOUNDARY</span><h3>Treat vendors as unreliable dependencies</h3><p>Timeouts, malformed responses, partner outages, and partial failures should be handled explicitly rather than allowed to silently corrupt the booking state.</p></article>
+        <article class="study-card"><span class="study-card-index">03 / EVENT BOUNDARY</span><h3>Use messaging intentionally</h3><p>Kafka-backed workflows can decouple event handling from synchronous request paths. Event contracts, duplicate delivery, and consumer error handling still need clear design.</p></article>
+        <article class="study-card"><span class="study-card-index">04 / OBSERVABILITY</span><h3>Make decisions diagnosable</h3><p>Useful correlation identifiers and safe logs help distinguish policy rejection from partner failure without exposing personal travel data or secrets.</p></article>
+      </div>
+      <div class="study-callout"><strong>Confidentiality note:</strong> this page intentionally omits internal endpoints, proprietary policy expressions, partner credentials, production topology, and non-public source code.</div>
+    </section>
+    <section class="study-section" aria-labelledby="takeaway-title"><div class="study-section-heading"><div><span class="study-overline">03 / TAKEAWAY</span><h2 id="takeaway-title">Reliable workflows need <em>clear boundaries.</em></h2></div><p>The key engineering challenge is coordinating business rules and external systems while keeping policy decisions explicit and booking outcomes diagnosable. This page summarizes the work at a generalized level rather than presenting private implementation as public code.</p></div><div class="study-related"><a href="saml-2-sso.html">SAML 2.0 SSO <span>↗</span></a><a href="smartreactor-ai.html">SmartReactor AI <span>↗</span></a></div></section>
+
+    <div class="study-cta-row">
+      <a class="button primary" href="../index.html#contact">Discuss backend engineering <span>↗</span></a>
+      <a class="button ghost" href="../index.html#work">Back to selected work <span>↑</span></a>
+    </div>
+    <p class="study-footer-note">Built with intention. This page describes the project at a technical level; confidential implementation details are intentionally excluded.</p>
+  </main>
+  <footer class="footer"><a class="footer-logo" href="../index.html#top">R<span>/</span>D</a><p>Built with intention. Tuned for clarity.</p><div><span>© <span id="year"></span> Rahul Devligri</span><a href="#top">Back to top ↑</a></div></footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>

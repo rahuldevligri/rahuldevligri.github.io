@@ -39,7 +39,7 @@
     });
   }));
 
-  const modalMap = {sso:'case-sso', onboarding:'case-onboarding', smartreactor:'case-smartreactor', book:'case-book', sjlt:'case-sjlt', travel:'case-travel'};
+  const modalMap = {onboarding:'case-onboarding', book:'case-book', sjlt:'case-sjlt'};
   document.querySelectorAll('[data-dialog]').forEach(button => button.addEventListener('click', () => {
     const dialog = document.getElementById(modalMap[button.dataset.dialog]);
     if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
