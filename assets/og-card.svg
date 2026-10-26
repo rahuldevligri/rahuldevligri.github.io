@@ -1,24 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102b3b"/><stop offset=".55" stop-color="#08111f"/><stop offset="1" stop-color="#0a1727"/></linearGradient>
-    <radialGradient id="glow"><stop stop-color="#79eadb" stop-opacity=".18"/><stop offset="1" stop-color="#79eadb" stop-opacity="0"/></radialGradient>
-    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse"><path d="M38 0H0V38" fill="none" stroke="#9dbdda" stroke-opacity=".10"/></pattern>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#121b3b"/><stop offset=".52" stop-color="#070916"/><stop offset="1" stop-color="#111029"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#7fe8ff"/><stop offset=".56" stop-color="#8797ff"/><stop offset="1" stop-color="#c4a0ff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#6d82ff" stop-opacity=".26"/><stop offset="1" stop-color="#6d82ff" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#9facff" stroke-opacity=".10"/></pattern>
   </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#grid)"/><circle cx="890" cy="330" r="330" fill="url(#glow)"/>
-  <rect x="74" y="73" width="54" height="54" rx="14" fill="#79eadb" fill-opacity=".10" stroke="#79eadb" stroke-opacity=".65"/>
-  <text x="89" y="109" fill="#edf6ff" font-family="Arial,sans-serif" font-size="25" font-weight="700">rd<tspan fill="#79eadb">.</tspan></text>
-  <text x="76" y="202" fill="#79eadb" font-family="monospace" font-size="16" letter-spacing="3">JAVA BACKEND ENGINEER / INDIA</text>
-  <text x="70" y="300" fill="#edf6ff" font-family="Arial,sans-serif" font-weight="700" font-size="65" letter-spacing="-2">Rahul Devligri</text>
-  <text x="75" y="364" fill="#79eadb" font-family="Arial,sans-serif" font-weight="600" font-size="36">Secure integrations.</text>
-  <text x="75" y="412" fill="#edf6ff" font-family="Arial,sans-serif" font-weight="600" font-size="36">Reliable event flows.</text>
-  <text x="76" y="477" fill="#a7bdcf" font-family="Arial,sans-serif" font-size="20">Java · Spring Boot · SAML / SSO · Kafka · SQL</text>
-  <g transform="translate(815 170)">
-    <circle cx="148" cy="148" r="132" fill="none" stroke="#79eadb" stroke-opacity=".19" stroke-dasharray="6 10"/>
-    <circle cx="148" cy="148" r="88" fill="#0b1e30" stroke="#79eadb" stroke-opacity=".5"/>
-    <text x="148" y="142" text-anchor="middle" fill="#79eadb" font-family="monospace" font-size="42">{ }</text>
-    <text x="148" y="171" text-anchor="middle" fill="#d7e7f5" font-family="monospace" font-size="12" letter-spacing="2">REQUEST FLOW</text>
-    <g fill="#112a3e" stroke="#79eadb" stroke-opacity=".5"><rect x="-5" y="-7" width="103" height="49" rx="9"/><rect x="199" y="-7" width="103" height="49" rx="9"/><rect x="-8" y="254" width="103" height="49" rx="9"/><rect x="203" y="254" width="103" height="49" rx="9"/></g>
-    <g fill="#d7e7f5" font-family="monospace" font-size="12" text-anchor="middle"><text x="46" y="22">REST APIs</text><text x="251" y="22">SAML / SSO</text><text x="43" y="284">KAFKA</text><text x="254" y="284">SQL DATA</text></g>
-    <g stroke="#79eadb" stroke-opacity=".5" stroke-dasharray="4 6" fill="none"><path d="M120 95L84 42"/><path d="M178 95L220 42"/><path d="M119 206L83 254"/><path d="M178 207L227 254"/></g>
+  <rect width="1200" height="630" fill="url(#bg)"/><rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="880" cy="325" r="390" fill="url(#glow)"/>
+  <rect x="72" y="68" width="55" height="55" rx="15" fill="#7f90ff" fill-opacity=".13" stroke="#91a0ff" stroke-opacity=".6"/>
+  <text x="83" y="104" fill="#f4f6ff" font-family="Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="-2">rd</text><circle cx="113" cy="111" r="3" fill="url(#accent)"/>
+  <text x="75" y="183" fill="#a7b6e3" font-family="monospace" font-size="15" letter-spacing="3">JAVA BACKEND ENGINEER  /  INDIA</text>
+  <text x="70" y="278" fill="#f4f6ff" font-family="Arial,sans-serif" font-size="64" font-weight="700" letter-spacing="-2">Rahul Devligri</text>
+  <text x="75" y="344" fill="url(#accent)" font-family="Arial,sans-serif" font-size="37" font-weight="700" letter-spacing="-1">Systems behind the experience.</text>
+  <text x="76" y="412" fill="#c0cbe7" font-family="Arial,sans-serif" font-size="22">Secure identity · event-driven services · backend integrations</text>
+  <text x="76" y="468" fill="#91a2c9" font-family="monospace" font-size="17" letter-spacing="1">JAVA  /  SPRING BOOT  /  SAML-SSO  /  KAFKA  /  SQL</text>
+  <g transform="translate(820 157)">
+    <circle cx="160" cy="155" r="139" fill="none" stroke="#91a0ff" stroke-opacity=".28" stroke-dasharray="5 10"/>
+    <circle cx="160" cy="155" r="98" fill="#0b1228" stroke="#7fe8ff" stroke-opacity=".62"/>
+    <circle cx="160" cy="155" r="82" fill="none" stroke="#91a0ff" stroke-opacity=".25"/>
+    <text x="160" y="148" text-anchor="middle" fill="url(#accent)" font-family="monospace" font-size="43">{ }</text>
+    <text x="160" y="180" text-anchor="middle" fill="#dce6ff" font-family="monospace" font-size="12" letter-spacing="2">REQUEST FLOW</text>
+    <g fill="#111a36" stroke="#91a0ff" stroke-opacity=".52"><rect x="-13" y="-2" width="123" height="49" rx="10"/><rect x="210" y="-2" width="123" height="49" rx="10"/><rect x="-15" y="265" width="126" height="49" rx="10"/><rect x="211" y="265" width="122" height="49" rx="10"/></g>
+    <g fill="#dce6ff" font-family="monospace" font-size="12" text-anchor="middle"><text x="48" y="28">REST / API</text><text x="272" y="28">SAML / SSO</text><text x="48" y="295">KAFKA</text><text x="272" y="295">SQL DATA</text></g>
+    <g stroke="url(#accent)" stroke-opacity=".63" stroke-dasharray="4 7" fill="none"><path d="M126 99L87 47"/><path d="M194 99L246 47"/><path d="M126 212L87 265"/><path d="M194 212L247 265"/></g>
+    <g fill="#8bffdc"><circle cx="87" cy="47" r="3"/><circle cx="246" cy="47" r="3"/><circle cx="87" cy="265" r="3"/><circle cx="247" cy="265" r="3"/></g>
   </g>
 </svg>

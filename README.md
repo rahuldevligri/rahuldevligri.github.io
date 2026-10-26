@@ -1,111 +1,71 @@
 # Rahul Devligri — Backend Engineering Portfolio
 
-A custom, responsive static portfolio for **Rahul Devligri**, focused on Java backend engineering, secure integrations, event-driven services, and data-backed applications.
+A custom, responsive portfolio for **Rahul Devligri**, a Java backend engineer focused on secure identity, event-driven services, backend integrations, and maintainable data-driven systems.
 
-## Features
+Live website: <https://rahuldevligri.github.io/>
 
-- Semantic HTML, custom CSS, and dependency-light JavaScript.
-- Responsive layouts for desktop, tablet, and mobile.
-- Accessible mobile navigation, visible focus styles, skip link, project filters, and native dialog case studies.
-- Reduced-motion support and scroll-reveal animations.
-- Original CSS/SVG technical illustrations (no stock-photo filler).
-- SEO title, description, canonical URL, Open Graph and Twitter metadata.
-- Local resume PDF, favicon, and Open Graph image.
-- GitHub Pages-ready root layout and `.nojekyll` marker.
+## Design and experience
+
+- Dark, editorial visual system with electric-cyan, blue, and violet accents.
+- Animated hero headline, subtle atmospheric glow, moving system paths, scroll progress, and section-reveal transitions.
+- Interactive architecture map with three modes: SAML SSO, Kafka event flow, and a SpEL-based travel policy workflow.
+- Seven selected projects/case studies, including the textile ERP work documented in the résumé.
+- Experience timeline, education, structured skill groups, and public DSA/Java learning trail.
+- Collapsible list of foundational courses and badges found on the public LinkedIn profile.
+- Mobile navigation, project filters, native case-study dialogs, visible keyboard focus, and reduced-motion support.
+- No front-end framework or runtime dependency; animations are CSS/vanilla JavaScript.
+- SEO metadata, Person JSON-LD, Open Graph/Twitter metadata, favicon, sitemap, and `robots.txt`.
+- Original avatar is loaded from the public GitHub profile; no synthetic face or stock imagery is used.
 
 ## Local preview
 
-This is a static website; no Node.js build is required.
+The site is plain HTML/CSS/JavaScript. No Node installation or production build is required.
 
-### Option 1 — open directly
-
-Open `index.html` in a modern browser. For best testing, use a local HTTP server.
-
-### Option 2 — Python server
-
-From this directory:
+From this directory run:
 
 ```powershell
 py -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+Then open <http://localhost:8000/>.
 
-## Deploy to `https://rahuldevligri.github.io/`
+You can also open `index.html` directly, but a local HTTP server gives a more realistic page environment.
 
-The public lookup for `rahuldevligri/rahuldevligri.github.io` returned 404 and no matching public repository was found. No existing repository was changed and no deployment is claimed. If the repository exists privately, use that repository rather than creating a duplicate.
+## Deploy the refresh to GitHub Pages
 
-### 1. Create the repository if it does not already exist
-
-On GitHub, choose **New repository** and set:
-
-- **Owner:** `rahuldevligri`
-- **Repository name:** `rahuldevligri.github.io`
-- **Visibility:** Public
-- Leave **Add a README**, `.gitignore`, and license unchecked so the repository starts empty.
-
-Create it. If GitHub says the name already exists, do not create a different repository; open the existing one and use the existing-repository workflow below.
-
-### 2. Push from Windows PowerShell
-
-Extract `Rahul-Devligri-Portfolio.zip`. The project is inside a folder named `rahul-portfolio`. Adjust `$Source` if you extracted it somewhere else. The following commands assume the new GitHub repository is empty:
+The site is deployed from the root of the `main` branch in `rahuldevligri/rahuldevligri.github.io`. Before replacing files, create a local backup/rollback branch and verify the working tree.
 
 ```powershell
-$Source = Join-Path $HOME 'Downloads\Rahul-Devligri-Portfolio\rahul-portfolio'
 $Destination = Join-Path $HOME 'Documents\rahuldevligri.github.io'
+$Source = 'D:\Downloads\Rahul-Devligri-Portfolio-Redesign-V2\rahul-portfolio'
 
-git clone https://github.com/rahuldevligri/rahuldevligri.github.io.git $Destination
 Set-Location $Destination
+git status --short --branch
+git switch -c portfolio-redesign-v2
 
-Copy-Item -Path "$Source\*" -Destination . -Recurse -Force
-Copy-Item -LiteralPath (Join-Path $Source '.nojekyll') -Destination '.\.nojekyll' -Force
+Copy-Item -Path "$Source\*" -Destination $Destination -Recurse -Force
+Copy-Item -LiteralPath "$Source\.nojekyll" -Destination "$Destination\.nojekyll" -Force
 
-git branch -M main
-git status
+git status --short
+git diff --stat
 git add -A
-git commit -m "Build responsive backend engineering portfolio"
-git push -u origin main
+git commit -m "Refresh backend engineering portfolio with interactive systems map"
+git push -u origin portfolio-redesign-v2
 ```
 
-Authenticate with GitHub through your normal Git credential manager if Git requests it. Do not paste access tokens into chat or commit them to the repository.
+Review the branch at GitHub and merge it into `main` when satisfied; GitHub Pages will deploy the merged commit. If you prefer deploying directly from `main`, create a rollback branch before copying, then commit and push to `main`. Do not force-push.
 
-### Existing-repository workflow
+After merging, confirm the `pages build and deployment` workflow succeeds and visit <https://rahuldevligri.github.io/>. Hard-refresh with `Ctrl+F5` if the browser shows cached CSS.
 
-If the repository already has content, first clone it or open the existing local checkout, inspect `git status`, and create a backup branch before copying any files:
+## Content accuracy
 
-```powershell
-git status
-git switch -c portfolio-refresh-2026
-```
+- Employment dates, responsibilities, education, and the 48+ loom figure are based on the uploaded résumé.
+- Public project descriptions use the relevant GitHub repository README/source descriptions.
+- LinkedIn was inspected through publicly indexed content. Direct profile inspection was restricted, so the credential list is marked as items shown on the public LinkedIn profile rather than independently verified certificates.
+- Professional work at Zaggle and SJLT is marked as professional/internal work. No private source code, internal customer data, invented live demos, or unsupported results are claimed.
+- The architecture map is an illustrative explanation of engineering patterns, not a claim that every project uses one identical production topology.
 
-Copy the portfolio files into the repository root, inspect `git diff` and `git status`, then commit and push the new branch:
-
-```powershell
-git add -A
-git commit -m "Build responsive backend engineering portfolio"
-git push -u origin portfolio-refresh-2026
-```
-
-Review that branch on GitHub before merging it into the default branch. Do not force-push or replace existing files until you have checked whether they contain work worth preserving.
-
-### 3. Enable GitHub Pages
-
-1. Open the repository's **Settings → Pages**.
-2. Select **Deploy from a branch**, choose `main`, and choose `/ (root)`; save.
-3. Open the **Actions** tab and confirm the Pages deployment finishes successfully.
-4. Visit <https://rahuldevligri.github.io/> and hard-refresh the page.
-
-This is plain HTML/CSS/JavaScript in the repository root, so no Node.js build, Vite configuration, or `base` path is required.
-
-## Important accuracy notes
-
-- The employment dates, education entry, and skills are transcribed from the uploaded resume.
-- Public project descriptions are based on available GitHub repository READMEs. Professional travel-platform details are résumé-derived and are explicitly marked as professional work; no public source repository or demo is claimed for them.
-- There are no invented impact metrics or fabricated live demos.
-- The profile avatar loads from the public GitHub avatar URL and has an initials fallback if it fails.
-- Update the email, résumé, location, or employment details here if any of the underlying source information changes.
-
-## Files
+## Project structure
 
 ```text
 rahul-portfolio/
