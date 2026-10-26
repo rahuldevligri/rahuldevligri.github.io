@@ -60,15 +60,32 @@
 
   const progress = document.getElementById('progress-bar');
   let ticking = false;
+  let maxScroll = 0;
+  const measureScrollRange = () => {
+    maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+  };
   const updateProgress = () => {
-    if (!progress) return;
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = `${maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0}%`;
+    if (progress) {
+      const ratio = maxScroll > 0 ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+      progress.style.transform = `scaleX(${ratio})`;
+    }
     ticking = false;
   };
-  window.addEventListener('scroll', () => {
+  const scheduleProgressUpdate = () => {
     if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
-  }, {passive:true});
+  };
+  const measureAndScheduleProgress = () => {
+    measureScrollRange();
+    scheduleProgressUpdate();
+  };
+  window.addEventListener('scroll', scheduleProgressUpdate, {passive:true});
+  window.addEventListener('resize', measureAndScheduleProgress, {passive:true});
+  if ('ResizeObserver' in window) {
+    const scrollRangeObserver = new ResizeObserver(measureAndScheduleProgress);
+    scrollRangeObserver.observe(document.documentElement);
+    if (document.body) scrollRangeObserver.observe(document.body);
+  }
+  measureScrollRange();
   updateProgress();
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
