@@ -2522,7 +2522,9 @@ button,a {
 }
 /* V3.1: additional-projects archive */
 .more-work {
-  margin-top: clamp(56px, 8vw, 100px);
+  /* Match the centered content width used by every other work-section block. */
+  width: min(var(--max), calc(100% - 72px));
+  margin: clamp(56px, 8vw, 100px) auto 0;
   padding-top: clamp(30px, 4vw, 52px);
   border-top: 1px solid var(--line);
   scroll-margin-top: 100px;
@@ -2704,4 +2706,434 @@ button,a {
 
   }
 
+}
+
+
+/* V3.2 — award recognition and balanced project archive */
+.more-work-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.recognition-section {
+  position: relative;
+  width: min(var(--max), calc(100% - 72px));
+  margin: 0 auto;
+  padding: clamp(76px, 9vw, 126px) 0 clamp(82px, 10vw, 140px);
+  scroll-margin-top: 100px;
+}
+
+.recognition-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 8% -12vw 10%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 9% 38%, rgba(131, 240, 222, .065), transparent 47%),
+    radial-gradient(ellipse at 84% 72%, rgba(166, 140, 255, .07), transparent 42%);
+}
+
+.recognition-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(270px, .8fr);
+  align-items: end;
+  gap: clamp(28px, 5vw, 70px);
+  margin: 34px 0 36px;
+}
+
+.recognition-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: var(--aqua);
+  font: 10px/1.5 var(--mono);
+  letter-spacing: 1.15px;
+  text-transform: uppercase;
+}
+
+.award-spark {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(131, 240, 222, .38);
+  border-radius: 50%;
+  box-shadow: 0 0 24px rgba(131, 240, 222, .1);
+  font-size: 14px;
+}
+
+.recognition-heading h2 {
+  margin: 0;
+  font: 600 clamp(44px, 5.7vw, 76px)/.99 var(--display);
+  letter-spacing: -.065em;
+}
+
+.recognition-heading h2 em {
+  font-style: normal;
+  color: transparent;
+  background: linear-gradient(105deg, var(--aqua), #80c8f3 52%, #b4a0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.recognition-summary {
+  max-width: 440px;
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.recognition-summary strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  align-items: stretch;
+  gap: 16px;
+}
+
+.recognition-hero-photo {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line2);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(20, 29, 45, .88), rgba(8, 11, 18, .96));
+}
+
+.recognition-hero-photo > a {
+  position: relative;
+  display: block;
+  min-height: 320px;
+  flex: 1;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.recognition-hero-photo > a::after {
+  position: absolute;
+  inset: 35% 0 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(4, 7, 12, .4));
+}
+
+.recognition-hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center 43%;
+  transition: transform .65s cubic-bezier(.2, .7, .2, 1), filter .35s ease;
+}
+
+.recognition-hero-photo > a:hover img {
+  transform: scale(1.035);
+  filter: saturate(1.05);
+}
+
+.photo-expand {
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 50%;
+  color: white;
+  background: rgba(7, 9, 16, .58);
+  backdrop-filter: blur(12px);
+}
+
+.recognition-hero-photo figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 17px;
+  color: var(--dim);
+  font: 8px/1.5 var(--mono);
+  letter-spacing: .8px;
+}
+
+.recognition-hero-photo figcaption span:first-child {
+  color: var(--aqua);
+}
+
+.recognition-details {
+  position: relative;
+  min-width: 0;
+  padding: clamp(22px, 3vw, 34px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(166, 140, 255, .09), transparent 42%),
+    linear-gradient(145deg, rgba(17, 26, 42, .94), rgba(9, 13, 22, .96));
+}
+
+.award-mark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 25px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--line);
+}
+
+.award-mark span {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid rgba(131, 240, 222, .42);
+  border-radius: 15px;
+  color: var(--aqua);
+  background: rgba(131, 240, 222, .065);
+  box-shadow: inset 0 0 22px rgba(131, 240, 222, .04);
+  font-size: 23px;
+}
+
+.award-mark small {
+  color: var(--dim);
+  font: 8px/1.5 var(--mono);
+  letter-spacing: 1.25px;
+}
+
+.award-eyebrow {
+  margin: 0 0 9px;
+  color: var(--aqua);
+  font: 9px/1.5 var(--mono);
+  letter-spacing: 1.1px;
+}
+
+.recognition-details h3 {
+  margin: 0;
+  font: 600 clamp(23px, 2.35vw, 31px)/1.15 var(--display);
+  letter-spacing: -.9px;
+}
+
+.award-subtitle {
+  margin: 8px 0 18px;
+  color: #bbc6d9;
+  font-size: 12px;
+}
+
+.award-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.award-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 18px 0 21px;
+}
+
+.award-stack span {
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: #c6d2e3;
+  font: 8px/1.35 var(--mono);
+}
+
+.award-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 0 16px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.award-link span {
+  color: var(--aqua);
+  font-size: 16px;
+  transition: transform .2s ease;
+}
+
+.award-link:hover span {
+  transform: translate(2px, -2px);
+}
+
+.recognition-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.recognition-proof {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.recognition-proof img {
+  display: block;
+  width: 100%;
+  height: 102px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  object-fit: cover;
+  object-position: center;
+  transition: border-color .2s ease, transform .25s ease;
+}
+
+.recognition-proof:first-child img {
+  object-position: center 44%;
+}
+
+.recognition-proof:hover img {
+  border-color: var(--aqua);
+  transform: translateY(-2px);
+}
+
+.recognition-proof > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.recognition-proof b {
+  color: var(--aqua);
+  font-size: 13px;
+}
+
+.recognition-footnote {
+  display: flex;
+  gap: 10px;
+  max-width: 780px;
+  margin: 20px 0 0;
+  color: var(--dim);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.recognition-footnote > span {
+  color: var(--aqua);
+}
+
+@media (max-width: 1000px) {
+  .more-work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recognition-heading {
+    grid-template-columns: 1fr .8fr;
+    gap: 28px;
+  }
+
+  .recognition-grid {
+    grid-template-columns: 1fr .95fr;
+  }
+
+  .recognition-details {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .recognition-section {
+    width: calc(100% - 40px);
+    padding: 76px 0 86px;
+  }
+
+  .recognition-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin: 28px 0 25px;
+  }
+
+  .recognition-heading h2 {
+    font-size: clamp(43px, 11vw, 61px);
+  }
+
+  .recognition-summary {
+    max-width: none;
+    font-size: 12px;
+  }
+
+  .recognition-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .recognition-hero-photo > a,
+  .recognition-hero-photo img {
+    min-height: 240px;
+    height: auto;
+    aspect-ratio: 1.2;
+  }
+
+  .recognition-details {
+    padding: 23px;
+  }
+
+  .recognition-proof img {
+    height: clamp(104px, 28vw, 150px);
+  }
+
+  .recognition-footnote {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 420px) {
+  .recognition-section .section-label {
+    font-size: 7px;
+    letter-spacing: .6px;
+  }
+
+  .recognition-section .section-label > span:last-child {
+    font-size: 7px;
+  }
+
+  .recognition-hero-photo figcaption {
+    font-size: 7px;
+  }
+
+  .recognition-proof-grid {
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recognition-hero-photo img,
+  .recognition-proof img,
+  .award-link span {
+    transition: none;
+  }
+
+  .recognition-hero-photo > a:hover img,
+  .recognition-proof:hover img {
+    transform: none;
+  }
 }
