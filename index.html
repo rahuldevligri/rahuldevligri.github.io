@@ -25,8 +25,12 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/rahul-avatar.png?v=5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- Prioritize the responsive hero image; the picture below uses the same candidates. -->
+  <link rel="preload" as="image" type="image/webp" href="assets/rahul-cinematic-coding-768.webp" imagesrcset="assets/rahul-cinematic-coding-480.webp 480w, assets/rahul-cinematic-coding-768.webp 768w, assets/rahul-cinematic-coding-1110.webp 1110w, assets/rahul-cinematic-coding-1440.webp 1440w" imagesizes="(max-width: 760px) 100vw, (max-width: 1100px) 45vw, 50vw" fetchpriority="high">
+  <!-- V3.6: load web-font CSS without blocking first paint. -->
+  <link data-v36-font-loading="async" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -79,7 +83,10 @@
         <div class="hero-socials"><a href="https://github.com/rahuldevligri" target="_blank" rel="noopener noreferrer">GITHUB <span>↗</span></a><a href="https://www.linkedin.com/in/rahuldevligri/" target="_blank" rel="noopener noreferrer">LINKEDIN <span>↗</span></a><a href="mailto:rahuldevligri@gmail.com">EMAIL <span>↗</span></a></div>
       </div>
       <div class="hero-art" aria-label="Portrait of Rahul in a cinematic software engineering workspace">
-        <div class="portrait-frame"><img src="assets/rahul-cinematic-coding.jpg" width="1672" height="941" alt="Rahul at a coding desk with software architecture on the screens" fetchpriority="high"><div class="portrait-fade"></div></div>
+        <div class="portrait-frame"><picture>
+          <source type="image/webp" srcset="assets/rahul-cinematic-coding-480.webp 480w, assets/rahul-cinematic-coding-768.webp 768w, assets/rahul-cinematic-coding-1110.webp 1110w, assets/rahul-cinematic-coding-1440.webp 1440w" sizes="(max-width: 760px) 100vw, (max-width: 1100px) 45vw, 50vw">
+          <img src="assets/rahul-cinematic-coding.jpg" width="1672" height="941" alt="Rahul at a coding desk with software architecture on the screens" fetchpriority="high" decoding="async">
+        </picture><div class="portrait-fade"></div></div>
         <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
         <div class="floating-chip chip-security"><span class="chip-icon">⌑</span><span><small>IDENTITY</small><b>SAML · JWT · SSO</b></span><i class="chip-dot"></i></div>
         <div class="floating-chip chip-events"><span class="chip-icon">⌁</span><span><small>EVENT STREAM</small><b>Apache Kafka</b></span><i class="chip-dot"></i></div>

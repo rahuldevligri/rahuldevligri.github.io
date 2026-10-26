@@ -3256,3 +3256,11 @@ button,a {
 }
 /* Keep decorative marquee and hero artwork from enlarging the document viewport. */
 html { overflow-x: clip; }
+
+
+/* V3.6 performance: make the responsive picture fill the existing hero frame. */
+.portrait-frame picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
