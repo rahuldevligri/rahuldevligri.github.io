@@ -5,7 +5,7 @@
   --panel2:#141d2d;
   --ink:#f4f6fb;
   --muted:#9ca7ba;
-  --dim:#64718b;
+  --dim:#7b89a2;
   --line:rgba(190,208,239,.14);
   --line2:rgba(190,208,239,.25);
   --aqua:#83f0de;
@@ -1802,12 +1802,12 @@ button,a {
   opacity:1;
   transform:none
 }
-.js .reveal {
+.js-ready .reveal {
   opacity:0;
   transform:translateY(19px);
   transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)
 }
-.js .reveal.is-visible {
+.js-ready .reveal.is-visible {
   opacity:1;
   transform:translateY(0)
 }
@@ -2514,7 +2514,7 @@ button,a {
     animation-iteration-count:1!important;
     transition-duration:.01ms!important
   }
-  .js .reveal {
+  .js-ready .reveal {
     opacity:1;
     transform:none
   }

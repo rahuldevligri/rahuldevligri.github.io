@@ -72,4 +72,8 @@
   updateProgress();
   const year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
+
+  // Enable scroll-reveal hiding only after all interactions are initialized.
+  // If this script fails to load, content remains visible by default.
+  document.documentElement.classList.add('js-ready');
 })();
