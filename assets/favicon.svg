@@ -1,6 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="15" fill="#0b192a"/>
-  <rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#79eadb" stroke-opacity=".55"/>
-  <text x="11" y="41" fill="#edf6ff" font-family="Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="-3">rd</text>
-  <circle cx="48" cy="43" r="3" fill="#79eadb"/>
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#26386f"/><stop offset="1" stop-color="#0d3141"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#7fe8ff"/><stop offset="1" stop-color="#b59cff"/></linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="#070916"/>
+  <rect x="1" y="1" width="62" height="62" rx="16" fill="url(#tile)" stroke="#91a0ff" stroke-opacity=".58"/>
+  <text x="8" y="40" fill="#f4f6ff" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="-2">rd</text>
+  <circle cx="49" cy="46" r="3.5" fill="url(#accent)"/>
 </svg>
