@@ -94,3 +94,84 @@
   // If this script fails to load, content remains visible by default.
   document.documentElement.classList.add('js-ready');
 })();
+
+// Hero headline typewriter. The static HTML remains useful if this never runs.
+(() => {
+  'use strict';
+
+  const word = document.querySelector('[data-typewriter]');
+  if (!word) return;
+
+  const phrases = ['just work.', 'stay secure.', 'scale well.', 'run reliably.'];
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let phraseIndex = 0;
+  let characterIndex = phrases[0].length;
+  let phase = 'hold';
+  let timerId = 0;
+  let running = false;
+
+  const reset = () => {
+    window.clearTimeout(timerId);
+    running = false;
+    phraseIndex = 0;
+    characterIndex = phrases[0].length;
+    phase = 'hold';
+    word.textContent = phrases[0];
+  };
+
+  const step = () => {
+    if (!running || reduceMotion.matches) return;
+
+    if (phase === 'delete') {
+      characterIndex = Math.max(0, characterIndex - 1);
+      word.textContent = phrases[phraseIndex].slice(0, characterIndex);
+      if (characterIndex === 0) {
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        phase = 'type';
+        timerId = window.setTimeout(step, 260);
+      } else {
+        timerId = window.setTimeout(step, 42);
+      }
+      return;
+    }
+
+    if (phase === 'type') {
+      const phrase = phrases[phraseIndex];
+      characterIndex = Math.min(phrase.length, characterIndex + 1);
+      word.textContent = phrase.slice(0, characterIndex);
+      if (characterIndex === phrase.length) {
+        phase = 'hold';
+        timerId = window.setTimeout(() => {
+          phase = 'delete';
+          step();
+        }, 1750);
+      } else {
+        timerId = window.setTimeout(step, 78);
+      }
+      return;
+    }
+  };
+
+  const start = () => {
+    reset();
+    if (reduceMotion.matches) return;
+    running = true;
+    timerId = window.setTimeout(() => {
+      phase = 'delete';
+      step();
+    }, 1700);
+  };
+
+  start();
+  if (typeof reduceMotion.addEventListener === 'function') {
+    reduceMotion.addEventListener('change', event => {
+      if (event.matches) reset();
+      else start();
+    });
+  } else if (typeof reduceMotion.addListener === 'function') {
+    reduceMotion.addListener(event => {
+      if (event.matches) reset();
+      else start();
+    });
+  }
+})();
